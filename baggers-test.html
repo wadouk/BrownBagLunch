@@ -49,8 +49,7 @@
 
     <div class="container" style="padding: 55px 0px;">
         <div class="row">
-            <div id="filter-box" class="span4 panel radius">
-                <p class="lead"> <i class="icon-caret-down show-filter" style="cursor: pointer;"></i>&nbsp; Filtres - <span id="available-baggers" class="label"></span></p>
+            <div id="filter-box" class="span3 panel radius">
                 <div class="container row" id="filter-subbox">
                     <div>
                         <h4><i class="icon-globe"></i> Villes
@@ -75,51 +74,44 @@
             </div>
 
             <!-- BAGGERS! -->
-            <div id="baggersDetails" class="span5">
-                    {{#baggers}}
-                    <div id="{{baggerId}}" class="bagger">
-                        <div class="row-fluid panel radius container {{#paire}}callout{{/paire}}">
-                            <div class="span3" style="text-align: center; margin: 0 20px 0 0;">
-                                <h3 style="{{#paire}}color: white;{{/paire}}">{{name}}</h3>
-                                <img src="{{picture}}" alt="{{name}}">
-                                <br/><br/>
-                                {{#tags}}
-                                <span class="label label-success {{^paire}}label-info{{/paire}}   ">{{.}}</span>
-                                {{/tags}}
-                                <br/>
-                                <span class="label round {{#paire}}secondary{{/paire}}">Lieu: </span>
-                                <p><i class="icon-globe"></i> {{location}}</p>
-                            </div>
-                            <div class="span8" style="margin: 0;">
-                                <div style="margin-top: 10px;">
-                                    <p>{{{bio}}}</p>
-                                    <ul class="icons" style="margin-left: 30px;">
-                                        {{#websites}}
-                                        <li><i class="icon-book"></i> <a href="{{href}}">{{title}}</a></li>
-                                        {{/websites}}
-                                        <li><i class="icon-twitter"></i> <a href="https://twitter.com/{{twitter}}">@{{twitter}}</a></li>
-                                        <li><i class="icon-envelope-alt"></i> Infos et contact : {{{contact}}}</li>
-                                    </ul>
-                                </div>
-                                <hr/>
+        <div id="baggersDetails" class="span6">
+            {{#baggers}}
+            <section id="{{baggerId}}" class="bagger row panel radius {{#paire}}callout{{/paire}}">
+                <div class="span2" style="text-align: center; margin: 0 20px 0 0;">
+                    <h3 style="{{#paire}}color: white;{{/paire}}">{{name}}</h3>
+                    <img src="{{picture}}" alt="{{name}}">
+                    <br/><br/>
+                    {{#tags}}
+                    <span class="label label-success {{^paire}}label-info{{/paire}}   ">{{.}}</span>
+                    {{/tags}}
+                    <br/>
+                    <p><i class="icon-globe"></i> {{location}}</p>
+                </div>
+                <div class="span3">
+                    <p>{{{bio}}}</p>
+                    <ul class="icons" style="margin-left: 30px;">
+                        {{#websites}}
+                        <li><i class="icon-book"></i> <a href="{{href}}">{{title}}</a></li>
+                        {{/websites}}
+                        <li><i class="icon-twitter"></i> <a href="https://twitter.com/{{twitter}}">@{{twitter}}</a></li>
+                        <li><i class="icon-envelope-alt"></i> Infos et contact : {{{contact}}}</li>
+                    </ul>
 
-                                <span class="label round {{#paire}}secondary{{/paire}}">Propose :</span>
-                                <ul class="icons">
-                                    {{#sessions}}
-                                    <li>
-                                        <span class="show-details" style="font-weight: bold; cursor: pointer;"><i class="icon-caret-right"></i> {{title}}</span>
-                                        <!--<i class="icon-plus-sign-alt show-details" style="margin-left: 20px; font-weight: normal; color: green; cursor: pointer;"></i>-->
-                                        <blockquote style="display: none; {{#paire}}color: white;{{/paire}}">
-                                            {{{summary}}}
-                                        </blockquote>
-                                    </li>
-                                    {{/sessions}}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    {{/baggers}}
-                    <hr>
+                    <span class="label round {{#paire}}secondary{{/paire}}">Propose :</span>
+                    <ul class="icons">
+                        {{#sessions}}
+                        <li>
+                            <span class="show-details" style="font-weight: bold; cursor: pointer;"><i class="icon-caret-right"></i> {{title}}</span>
+                            <!--<i class="icon-plus-sign-alt show-details" style="margin-left: 20px; font-weight: normal; color: green; cursor: pointer;"></i>-->
+                            <blockquote style="display: none; {{#paire}}color: white;{{/paire}}">
+                                {{{summary}}}
+                            </blockquote>
+                        </li>
+                        {{/sessions}}
+                    </ul>
+                </div>
+            </section>
+            {{/baggers}}
             </div>
         </div>
     </div>
